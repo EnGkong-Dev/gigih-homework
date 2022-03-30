@@ -10,14 +10,14 @@
 
 
 .App-header {
-  background-color: #C0C0C0;
+  background-color: #2a2525;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #282c34;
+  color: #2d5ec0;
 }
 
 .App-link {
@@ -40,11 +40,11 @@ a {
 
 .spotify-button {
   position: relative;
-  background-color: var(--background-base,#1ed760);
-  color: var(--text-base,#000000);
+  background-color: var(--background-base,blue);
+  color: var(--text-base,red);
   border-radius: 500px;
-  font-size: inherit;
-  padding: 14px 32px;
+  font-size: initial;
+  padding: 40px 32px;
   display: flex;
   -moz-box-align: center;
   align-items: center;

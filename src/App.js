@@ -23,7 +23,7 @@ if (spotifyToken) {
 function App() {
   // Begin login procedure
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  const REDIRECT_URI = "http://localhost:3000/redirect";
+  const REDIRECT_URI = "http://localhost:3000/webapp";
   const AUTH_ENDPOINT = process.env.REACT_APP_AUTH_URL;
   const RESPONSE_TYPE = "token";
 
@@ -50,14 +50,12 @@ function App() {
     setToken("");
     window.localStorage.removeItem("token");
   }
-  // End login procedure
 
   const [songs, setSongs] = useState(1);
   const [artists, setArtists] = useState(1);
   const [albums, setAlbums] = useState(1);
   let placeholder = "https://upload.wikimedia.org/wikipedia/commons/8/8f/Cute-kittens-12929201-1600-1200.jpg";
   let updateResults = (searchString) => {
-    // Search songs
     spotifyApi.searchTracks(searchString, { limit: 4, offset: 0 }).then(
       function(data) {
         console.log('Searched songs by "' + searchString + '"', data.body);
@@ -69,7 +67,6 @@ function App() {
       }
     );
 
-    // Search artists
     spotifyApi.searchArtists(searchString, { limit: 4, offset: 0 }).then(
       function(data) {
         console.log('Searched artists by "' + searchString + '"', data.body);
@@ -81,7 +78,6 @@ function App() {
       }
     );
 
-    // Search albums
     spotifyApi.searchAlbums(searchString, { limit: 4, offset: 0 }).then(
       function(data) {
         console.log('Searched albums by "' + searchString + '"', data.body);
@@ -97,9 +93,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          {!token || !window.localStorage.getItem("token") ? <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}><button className="spotify-button">Login to Spotify</button></a>
+          {!token || !window.localStorage.getItem("token") ? <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}><button className="spotify-button">Login</button></a>
               : <button className="spotify-button" onClick={logout}>Logout</button>}
-          <h1>Search for songs, artists or albums on Spotify</h1>
+          <h1>Cari lagu Di Spotify</h1>
       </header>
 
       <Box
