@@ -8,19 +8,18 @@ const Form = ({ token, userId, songUris }) => {
     description: "",
   });
 
-  // run addSong function when playlistId is set
   useEffect(() => {
     if (playlistId) {
       addSongs();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [playlistId]);
+  // eslint-disable-next-line no-use-before-define
+  }, [addSongs, playlistId]);
 
   // get the form data
-  const handleForm = (e) => {
+  function handleForm(e) {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
-  };
+  }
 
   // handle form submit
   const handleSubmit = async (e) => {
@@ -40,8 +39,7 @@ const Form = ({ token, userId, songUris }) => {
     }
   };
 
-  // add songs to the playlist
-  const addSongs = async () => {
+  const newLocal = async () => {
     pushSongs(playlistId, songUris)
       .then((response) => {
         console.log(response);
@@ -50,6 +48,8 @@ const Form = ({ token, userId, songUris }) => {
         console.log(error);
       });
   };
+  // add songs to the playlist
+  const addSongs = newLocal;
 
   return (
     <form onSubmit={handleSubmit}>
