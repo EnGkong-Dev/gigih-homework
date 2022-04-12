@@ -15,6 +15,10 @@
 	height: 60px;
 }
 
+/* .music img {
+	height: 60px;
+} */
+
 .music-left {
 	display: flex;
 	overflow: hidden;

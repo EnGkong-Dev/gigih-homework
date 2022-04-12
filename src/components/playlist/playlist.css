@@ -6,7 +6,7 @@
 	border-radius: 12px;
 	margin: 10px auto 20px auto;
 	padding: 10px 40px;
-	background-color: #bbd1ea;
+	background-color: #2a74be;
 	text-align: center;
 	font-size: 25px;
 	width: 100%;
@@ -27,8 +27,8 @@
 	width: 90%;
 	font-size: 18px;
 	border: none;
-	border-bottom: 2px solid #323031;
-	background-color: #bbd1ea;
+	border-bottom: 2px solid #3dbf26;
+	background-color: #0d0d0e;
 	height: 24px;
 	margin-bottom: 0px;
 }
@@ -41,8 +41,8 @@
 	width: 90%;
 	font-size: 18px;
 	border: none;
-	border-bottom: 2px solid #323031;
-	background-color: #bbd1ea;
+	border-bottom: 2px solid #3dbf26;
+	background-color: #0d0d0e;
 	height: 24px;
 	margin-bottom: 15px;
 }
@@ -53,7 +53,7 @@
 }
 
 .submit {
-	background-color: #323031;
+	background-color: #0e0107;
 	display: inline-block;
 	border-radius: 30px;
 	border: none;
